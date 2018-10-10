@@ -74,7 +74,8 @@ namespace WpfApp2
             ListRW.Items.Clear();
 
             //RunPowershellScript(Com,Dfsin.Text);
-            RunPowershellScript(currentPath.Replace(@"bin\Debug", Com),Dfsin.Text);
+            String DFS = '"' + Dfsin.Text + '"';
+            RunPowershellScript(currentPath.Replace(@"bin\Debug", Com),DFS);
             string UserR = System.IO.File.ReadAllText(currentPath.Replace(@"bin\Debug", @"Powershell\AccessR.txt"));
             string UserRW = System.IO.File.ReadAllText(currentPath.Replace(@"bin\Debug", @"Powershell\AccessRW.txt"));
             ListR.Items.Add(UserR);
