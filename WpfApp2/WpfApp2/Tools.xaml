@@ -18,5 +18,6 @@
         <Label Content="Check and Export &#xD;&#xA;user right on DFS Link" HorizontalAlignment="Left" Margin="57,38,0,0" VerticalAlignment="Top" Height="51" Width="156" Foreground="White" FontSize="14" FontWeight="Bold"/>
         <Button Content="Close" HorizontalAlignment="Left" Margin="288,391,0,0" VerticalAlignment="Top" Width="75" Background="Black" Foreground="White" Click="Button_Click_1"/>
 
+
     </Grid>
 </Window>

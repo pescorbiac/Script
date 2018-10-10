@@ -13,13 +13,13 @@
                 <GradientStop Color="#FF645757" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <ListBox x:Name="ListR" HorizontalAlignment="Left" Height="191" Margin="62,170,0,0" VerticalAlignment="Top" Width="170"/>
-        <ListBox x:Name="ListRW" HorizontalAlignment="Left" Height="191" Margin="289,170,0,0" VerticalAlignment="Top" Width="170"/>
+        <ListBox x:Name="ListR" HorizontalAlignment="Left" Height="191" Margin="62,170,0,0" VerticalAlignment="Top" Width="170" SelectionChanged="ListR_SelectionChanged" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.CanContentScroll="True"/>
+        <ListBox x:Name="ListRW" HorizontalAlignment="Left" Height="191" Margin="289,170,0,0" VerticalAlignment="Top" Width="170" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.CanContentScroll="False"/>
         <Button x:Name="OpenR" Content="Open" HorizontalAlignment="Left" Margin="62,377,0,0" VerticalAlignment="Top" Width="75" Background="#FF050303" Foreground="White" Click="OpenR_Click"/>
         <Button x:Name="OpenRW" Content="Open" HorizontalAlignment="Left" Margin="289,376,0,0" VerticalAlignment="Top" Width="75" Click="OpenRW_Click" Background="Black" Foreground="White"/>
         <Button x:Name="Search" Content="Search" HorizontalAlignment="Left" Margin="534,114,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.632,0.646" Click="Search_Click" Foreground="White" Background="Black"/>
         <Button x:Name="Close" Content="Close" HorizontalAlignment="Left" Margin="534,377,0,0" VerticalAlignment="Top" Width="75" Click="Close_Click" Background="Black" Foreground="White"/>
-        <TextBox x:Name="Dfsin" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" Margin="62,111,0,0" BorderBrush="{x:Null}" Background="#FFFFFDFD" Foreground="#FF200505" FontSize="16" FontFamily="SimSun-ExtB" TextChanged="TextBox_TextChanged"/>
+        <TextBox x:Name="Dfsin" HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="280" Margin="62,111,0,0" BorderBrush="{x:Null}" Background="#FFFFFDFD" Foreground="#FF200505" FontFamily="Microsoft Sans Serif" TextChanged="TextBox_TextChanged" MaxLines="1"/>
         <Label Content="Enter DFS Link:" HorizontalAlignment="Left" Margin="62,67,0,0" VerticalAlignment="Top" Width="255" Background="{x:Null}" Foreground="White" FontFamily="SimSun-ExtB" FontSize="16"/>
 
     </Grid>

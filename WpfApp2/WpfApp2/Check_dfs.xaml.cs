@@ -16,6 +16,7 @@ using System.Management.Automation;
 using System.Management.Automation.Runspaces;
 using System.Diagnostics;
 using System.Collections.ObjectModel;
+using System.Reflection;
 
 
 namespace WpfApp2
@@ -25,8 +26,11 @@ namespace WpfApp2
     /// </summary>
     public partial class MainWindow : Window
     {
-        public string toto = "1234";
-        public string Com = @"C:\Users\pescorbiac\source\repos\WpfApp2\WpfApp2\Powershell\test.ps1 ";
+       
+        public string Com = @"Powershell\dfs-access.ps1 ";
+
+        String currentPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location);
+        
 
 
         public static int RunPowershellScript(string ps,string ar)
@@ -55,12 +59,13 @@ namespace WpfApp2
 
         private void OpenR_Click(object sender, RoutedEventArgs e)
         {
+            Process.Start(currentPath.Replace(@"bin\Debug", @"Powershell\AccessR.txt"));
 
         }
 
         private void OpenRW_Click(object sender, RoutedEventArgs e)
         {
-
+            Process.Start(currentPath.Replace(@"bin\Debug", @"Powershell\AccessRW.txt"));
         }
 
         private void Search_Click(object sender, RoutedEventArgs e)
@@ -68,10 +73,10 @@ namespace WpfApp2
             ListR.Items.Clear();
             ListRW.Items.Clear();
 
-            RunPowershellScript(Com,Dfsin.Text);
-
-            string UserR = System.IO.File.ReadAllText(@"C:\Temp\Projet\tata.txt");
-            string UserRW = System.IO.File.ReadAllText(@"C:\Users\pescorbiac\source\repos\WpfApp2\WpfApp2\Powershell\toto.txt");
+            //RunPowershellScript(Com,Dfsin.Text);
+            RunPowershellScript(currentPath.Replace(@"bin\Debug", Com),Dfsin.Text);
+            string UserR = System.IO.File.ReadAllText(currentPath.Replace(@"bin\Debug", @"Powershell\AccessR.txt"));
+            string UserRW = System.IO.File.ReadAllText(currentPath.Replace(@"bin\Debug", @"Powershell\AccessRW.txt"));
             ListR.Items.Add(UserR);
             ListRW.Items.Add(UserRW);
         }
@@ -86,6 +91,11 @@ namespace WpfApp2
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             
+        }
+
+        private void ListR_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

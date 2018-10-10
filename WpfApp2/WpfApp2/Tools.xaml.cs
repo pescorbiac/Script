@@ -36,12 +36,13 @@ namespace WpfApp2
             var window = new WpfApp2.MainWindow();
             window.Show();
 
-
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
+
+
     }
 }
